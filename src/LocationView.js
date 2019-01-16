@@ -1,13 +1,11 @@
 import React from 'react';
 import {
   View, StyleSheet, Animated, Platform, UIManager,
-  TouchableOpacity, Text, ViewPropTypes
+  TouchableOpacity, Text, ViewPropTypes, Image
 } from "react-native";
 import MapView from 'react-native-maps';
 import AutoCompleteInput from "./AutoCompleteInput";
 import Events from 'react-native-simple-events';
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import Entypo from "react-native-vector-icons/Entypo";
 import PropTypes from 'prop-types';
 import fetch from 'react-native-cancelable-fetch';
 
@@ -140,7 +138,7 @@ export default class LocationView extends React.Component {
           onRegionChange={this._onMapRegionChange}
           onRegionChangeComplete={this._onMapRegionChangeComplete}
         />
-        <Entypo name={'location-pin'} size={30} color={this.props.markerColor} style={{backgroundColor: 'transparent'}}/>
+        <Image source={require('../images/pin.png')} style={{backgroundColor: 'transparent'}}/>
         <View style={styles.fullWidthContainer}>
           <AutoCompleteInput
             ref={input => this._input = input}
@@ -150,7 +148,7 @@ export default class LocationView extends React.Component {
           />
         </View>
         <TouchableOpacity style={[styles.currentLocBtn, {backgroundColor: this.props.markerColor}]} onPress={this._getCurrentLocation}>
-          <MaterialIcons name={'my-location'} color={'white'} size={25}/>
+          <Image source={require('../images/baseline_my_location_black_24dp.png')} size={25}/>
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.actionButton, this.props.actionButtonStyle]}

@@ -1,11 +1,10 @@
 import React from 'react';
-import {TextInput, View, StyleSheet, Animated, TouchableOpacity} from "react-native";
+import {TextInput, View, StyleSheet, Animated, TouchableOpacity, Image} from "react-native";
 import AutoCompleteListView from "./AutoCompleteListView";
 import Events from "react-native-simple-events";
 import debounce from "../utils/debounce";
 import fetch from 'react-native-cancelable-fetch';
 import PropTypes from 'prop-types';
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 const styles = StyleSheet.create({
   textInputContainer: {
@@ -140,7 +139,7 @@ export default class AutoCompleteInput extends React.Component {
   _getClearButton() {
     return this.state.inFocus ?
       (<TouchableOpacity style={styles.btn} onPress={this._onPressClear}>
-        <MaterialIcons name={'clear'} size={20}/>
+        <Image source={require('../images/baseline_close_black_24.png')} size={20}/>
       </TouchableOpacity>) : null;
   }
 
