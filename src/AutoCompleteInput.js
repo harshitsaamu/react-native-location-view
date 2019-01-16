@@ -139,7 +139,7 @@ export default class AutoCompleteInput extends React.Component {
   _getClearButton() {
     return this.state.inFocus ?
       (<TouchableOpacity style={styles.btn} onPress={this._onPressClear}>
-        <Image source={require('../images/baseline_close_black_24.png')} size={20}/>
+        <Image source={require('../utils/baseline_close_black_24.png')} size={20}/>
       </TouchableOpacity>) : null;
   }
 

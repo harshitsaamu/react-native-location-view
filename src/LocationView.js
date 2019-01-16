@@ -138,7 +138,7 @@ export default class LocationView extends React.Component {
           onRegionChange={this._onMapRegionChange}
           onRegionChangeComplete={this._onMapRegionChangeComplete}
         />
-        <Image source={require('../images/pin.png')} style={{backgroundColor: 'transparent'}}/>
+        <Image source={require('../utils/pin.png')} style={{backgroundColor: 'transparent'}}/>
         <View style={styles.fullWidthContainer}>
           <AutoCompleteInput
             ref={input => this._input = input}
@@ -148,7 +148,7 @@ export default class LocationView extends React.Component {
           />
         </View>
         <TouchableOpacity style={[styles.currentLocBtn, {backgroundColor: this.props.markerColor}]} onPress={this._getCurrentLocation}>
-          <Image source={require('../images/baseline_my_location_black_24dp.png')} size={25}/>
+          <Image source={require('../utils/baseline_my_location_black_24dp.png')} size={25}/>
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.actionButton, this.props.actionButtonStyle]}
